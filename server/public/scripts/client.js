@@ -7,8 +7,10 @@ function readyNow(){
 }
 
 function operandCal(){
-    console.log('in operandCalc');
     //need to find a way to get the operand.
+    //use $(selector).text() to get content
+    let operandIn = (this);
+    console.log('in operandCalc', operandIn);
 }
 
 function clearCalc(){
