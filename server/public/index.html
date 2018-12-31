@@ -4,10 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vendors/jquery.js"></script>
+    <script src="scripts/client.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    <link rel="stylesheet" href="styles/style.css">
     <title>Weekend Challenge 2</title>
 </head>
 <body>
+    <div id="container">
     <h1>Weekend Challenge 2</h1>
-    
+    <!-- Setting up the inputs as the wire frame provided. Styling will come later -->
+    <div id="inputDiv">
+        <input type="number" placeholder="num1" id="num1In">
+        <button class="operandButton">+</button>
+        <button class="operandButton">-</button>
+        <button class="operandButton">*</button>
+        <button class="operandButton">/</button>
+        <input type="number" placeholder="num2" id="num2In">
+        <button id="equals">=</button>
+        <button id="clear">C</button>
+        <pre></pre>
+    </div>
+    <div id="outputDiv">
+        <h2>OUTPUT</h2>
+        <ul id="history">
+            <li>History 1</li>
+            <li>History 2</li>
+            <li>History 3</li>
+            <li>History 4</li>
+        </ul>
+
+    </div>
+    </div>
 </body>
 </html>

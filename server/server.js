@@ -11,4 +11,14 @@ const PORT = 5001;
 //server running on PORT
 app.listen(PORT, ()=>{
     console.log('server running on PORT:', PORT);
+});
+
+app.get('/calculate', (req, res)=>{
+    console.log('/calculate GET');
+    res.send('in GET');
+});
+
+app.post('/calculate', (req, res)=>{
+    console.log('/calculate POST');
+    res.send('in POST');
 })
