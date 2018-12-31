@@ -42,6 +42,28 @@ function equalsCalc(){
     }).then(function(response){
         console.log('response back', response);
         
-    })
+        $('#output').empty();
+        $('#output').append(`OUTPUT: ${calculation.num1}
+                             ${calculation.operand}
+                             ${calculation.num2} = 
+                             ${response.answerOut}`);
+    });
+    updateHistory();
     
+}
+
+function updateHistory(){
+    $.ajax({
+        method: 'GET',
+        url: '/calculate'
+    }).then(function(response){
+        console.log('response from GET', response);
+        $('#history').empty();
+        for(historyData of response){
+            $('#history').append(`<li>${historyData.num1} 
+                                      ${historyData.operand} 
+                                      ${historyData.num2}</li>`)
+        }
+        
+    });
 }
