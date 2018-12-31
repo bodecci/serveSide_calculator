@@ -9,7 +9,7 @@ function readyNow(){
 function operandCal(){
     //need to find a way to get the operand.
     //use $(selector).text() to get content
-    let operandIn = (this);
+    let operandIn = $(this).text();
     console.log('in operandCalc', operandIn);
 }
 
