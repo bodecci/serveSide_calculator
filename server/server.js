@@ -21,6 +21,13 @@ app.get('/calculate', (req, res)=>{
 });
 
 app.post('/calculate', (req, res)=>{
-    console.log('/calculate POST');
-    res.send('in POST');
+    console.log('/calculate POST', req.body);
+
+    let result = 0;
+    if(req.body.operand === '+'){
+        result = Number(req.body.num1) + Number(req.body.num2);
+    }
+
+
+    res.send({answerOut: result});
 })

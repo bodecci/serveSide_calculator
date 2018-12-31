@@ -18,7 +18,7 @@ function operandCal(){
     let operandIn = $(this).text();
 
     calculation.operand = operandIn;
-    calculation.num1 = parseInt($('#num1In').val());
+    calculation.num1 = $('#num1In').val();
     //find a way to get the second input assigned to the object.when enter pushed?
     //where do I send to server? after I have all the properties of the object
     
@@ -31,7 +31,7 @@ function clearCalc(){
 }
 
 function equalsCalc(){
-    calculation.num2 = parseInt($('#num2In').val());
+    calculation.num2 = $('#num2In').val();
     console.log('in equalsCalc', calculation);
     //all properties of object here. 
     //send to server here
