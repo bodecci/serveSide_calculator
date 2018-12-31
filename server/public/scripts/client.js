@@ -26,7 +26,14 @@ function operandCal(){
 }
 
 function clearCalc(){
-    console.log('in clearCalc');
+    //clears out all the input and operand
+    console.log('in clearCalc, cleared');
+    $('#num1In').val('');
+    $('#num2In').val('');
+    $('.operandButton').val('');
+    calculation.num1 = 0;
+    calculation.num2 = 0;
+    calculation.operand = 0;
     
 }
 
