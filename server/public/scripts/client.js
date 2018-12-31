@@ -6,13 +6,13 @@ let calculation = {
     operand: 0
 }
 
-function readyNow(){
+function readyNow() {
     $('.operandButton').on('click', operandCal);
     $('#clear').on('click', clearCalc);
     $('#equals').on('click', equalsCalc);
 }
 
-function operandCal(){
+function operandCal() {
     //need to find a way to get the operand.
     //use $(selector).text() to get content
     let operandIn = $(this).text();
@@ -21,11 +21,11 @@ function operandCal(){
     calculation.num1 = $('#num1In').val();
     //find a way to get the second input assigned to the object.when enter pushed?
     //where do I send to server? after I have all the properties of the object
-    
+
     console.log('in operandCalc', calculation);
 }
 
-function clearCalc(){
+function clearCalc() {
     //clears out all the input and operand
     console.log('in clearCalc, cleared');
     $('#num1In').val('');
@@ -34,10 +34,10 @@ function clearCalc(){
     calculation.num1 = 0;
     calculation.num2 = 0;
     calculation.operand = 0;
-    
+
 }
 
-function equalsCalc(){
+function equalsCalc() {
     calculation.num2 = $('#num2In').val();
     console.log('in equalsCalc', calculation);
     //all properties of object here. 
@@ -46,9 +46,9 @@ function equalsCalc(){
         method: 'POST',
         url: '/calculate',
         data: calculation
-    }).then(function(response){
+    }).then(function (response) {
         console.log('response back', response);
-        
+
         $('#output').empty();
         $('#output').append(`OUTPUT: ${calculation.num1}
                              ${calculation.operand}
@@ -56,21 +56,21 @@ function equalsCalc(){
                              ${response.answerOut}`);
     });
     updateHistory();
-    
+
 }
 
-function updateHistory(){
+function updateHistory() {
     $.ajax({
         method: 'GET',
         url: '/calculate'
-    }).then(function(response){
+    }).then(function (response) {
         console.log('response from GET', response);
         $('#history').empty();
-        for(historyData of response){
+        for (historyData of response) {
             $('#history').append(`<li>${historyData.num1} 
                                       ${historyData.operand} 
                                       ${historyData.num2}</li>`)
         }
-        
+
     });
 }

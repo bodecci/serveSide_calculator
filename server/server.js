@@ -6,22 +6,24 @@ const bodyParser = require('body-parser');
 
 //makes use of this path to get to index.html
 app.use(express.static('./server/public'));
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
 const historyOfCalc = [];
 const PORT = 5001;
 
 //server running on PORT
-app.listen(PORT, ()=>{
+app.listen(PORT, () => {
     console.log('server running on PORT:', PORT);
 });
 
-app.get('/calculate', (req, res)=>{
+app.get('/calculate', (req, res) => {
     console.log('/calculate GET');
     res.send(historyOfCalc);
 });
 
-app.post('/calculate', (req, res)=>{
+app.post('/calculate', (req, res) => {
     console.log('/calculate POST', req.body);
     historyOfCalc.push(req.body);
 
@@ -37,5 +39,7 @@ app.post('/calculate', (req, res)=>{
         result = parseInt((req.body).num1) / parseInt((req.body).num2);
     }
     //answer sent out
-    res.send({answerOut: result});
+    res.send({
+        answerOut: result
+    });
 })
