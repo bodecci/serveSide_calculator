@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 
 //makes use of this path to get to index.html
 app.use(express.static('./server/public'));
+app.use(bodyParser.urlencoded({extended: true}));
+
 
 const PORT = 5001;
 
