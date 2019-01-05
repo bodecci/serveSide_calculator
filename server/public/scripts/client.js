@@ -4,29 +4,28 @@ let calculation = {
     num1: '',
     num2: '',
     operand: ''
-}//end calculation
+} //end calculation
 
 function readyNow() {
     $('.btn').on('click', captureBtn);
     $('.operandButton').on('click', operandCal);
     $('#equals').on('click', equalsCalc);
     $('#clear').on('click', clearCalc);
-  
+
     updateHistory();
 }
 
-function captureBtn(){
+function captureBtn() {
     let numberIn = $(this).text();
     console.log('number clicked', numberIn);
-    
-    if(calculation.operand === ''){
+
+    if (calculation.operand === '') {
         calculation.num1 += numberIn;
-    } 
-    else{
+    } else {
         calculation.num2 += numberIn;
     }
     console.log(calculation);
-    
+
 }
 
 function operandCal() {
@@ -36,7 +35,7 @@ function operandCal() {
 
     calculation.operand = operandIn;
     // calculation.num1 = $('#num1In').val();
-    
+
     //find a way to get the second input assigned to the object.when enter pushed?
     //where do I send to server? after I have all the properties of the object
 }
@@ -44,8 +43,8 @@ function operandCal() {
 function clearCalc() {
     //clears out all the input and operand
     console.log('in clearCalc, cleared');
-    $('#num1In').val('');
-    $('#num2In').val('');
+    // $('#num1In').val('');
+    // $('#num2In').val('');
     calculation.num1 = '';
     calculation.num2 = '';
     // calculation.operand = 0;
@@ -57,19 +56,23 @@ function equalsCalc() {
     console.log('in equalsCalc', calculation);
     //all properties of object here. 
     //send to server here
-    $.ajax({
-        method: 'POST',
-        url: '/calculate',
-        data: calculation
-    }).then(function (response) {
-        console.log('response back', response);
+    if (calculation.num2 == 0 || calculation.operand == '/') {
+        alert('You MUST enter valid numbers');
+        return;
+    }
+        $.ajax({
+            method: 'POST',
+            url: '/calculate',
+            data: calculation
+        }).then(function (response) {
+            console.log('response back', response);
 
-        $('#output').empty();
-        $('#output').append(`OUTPUT: ${calculation.num1}
+            $('#output').empty();
+            $('#output').append(`OUTPUT: ${calculation.num1}
                              ${calculation.operand}
                              ${calculation.num2} = 
                              ${response.answerOut}`);
-    });
+        });
     updateHistory();
 
 }
