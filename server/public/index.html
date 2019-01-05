@@ -17,14 +17,66 @@
         <h1>Weekend Challenge 2</h1>
         <!-- Setting up the inputs as the wire frame provided. Styling will come later -->
         <div id="inputDiv">
-            <input type="number" placeholder="num1" id="num1In">
-            <button class="operandButton">+</button>
+            <!-- <input type="number" placeholder="num1" id="num1In"> -->
+            <p>
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group mr-2 btn-group-lg" role="group" aria-label="First group">
+                    <button type="button" class="btn btn-secondary ">1</button>
+                    <button type="button" class="btn btn-secondary">2</button>
+                    <button type="button" class="btn btn-secondary">3</button>
+                </div>
+                <div class="btn-group btn-group-lg" role="group" aria-label="operator group">
+                    <button type="button" class="btn btn-secondary operandButton">+</button>
+                </div>
+            </div>
+            </p>
+            <p>
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group mr-2 btn-group-lg" role="group" aria-label="Second group">
+                        <button type="button" class="btn btn-secondary ">4</button>
+                        <button type="button" class="btn btn-secondary">5</button>
+                        <button type="button" class="btn btn-secondary">6</button>
+                    </div>
+                    <div class="btn-group btn-group-lg" role="group" aria-label="Third group">
+                        <button type="button" class="btn btn-secondary operandButton">-</button>
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group mr-2 btn-group-lg" role="group" aria-label="Third group">
+                        <button type="button" class="btn btn-secondary ">7</button>
+                        <button type="button" class="btn btn-secondary">8</button>
+                        <button type="button" class="btn btn-secondary">9</button>
+                    </div>
+                    <div class="btn-group btn-group-lg" role="group" aria-label="Third group">
+                        <button type="button" class="btn btn-secondary operandButton ">*</button>
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group mr-2 btn-group-lg" role="group" aria-label="Third group">
+                        <button type="button" class="btn btn-secondary ">.</button>
+                        <button type="button" class="btn btn-secondary">0</button>
+                        <button type="button" class="btn btn-secondary">C</button>
+                    </div>
+                    <div class="btn-group btn-group-lg" role="group" aria-label="Third group">
+                        <button type="button" class="btn btn-secondary operandButton">/</button>
+                    </div>
+                </div>
+                
+            </p>
+            <div id="equal"><p>
+                <button type="button" id="equals" class="btn btn-secondary btn-lg">=</button>
+            </p></div>
+            <!-- <button class="operandButton">+</button>
             <button class="operandButton">-</button>
             <button class="operandButton">*</button>
-            <button class="operandButton">/</button>
-            <input type="number" placeholder="num2" id="num2In">
+            <button class="operandButton">/</button> -->
+            <!-- <input type="number" placeholder="num2" id="num2In">
             <button id="equals">=</button>
-            <button id="clear">C</button>
+            <button id="clear">C</button> -->
             <pre></pre>
         </div>
         <div id="outputDiv">

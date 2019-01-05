@@ -1,15 +1,32 @@
 $(document).ready(readyNow);
 
 let calculation = {
-    num1: 0,
-    num2: 0,
-    operand: 0
-}
+    num1: '',
+    num2: '',
+    operand: ''
+}//end calculation
 
 function readyNow() {
+    $('.btn').on('click', captureBtn);
     $('.operandButton').on('click', operandCal);
-    $('#clear').on('click', clearCalc);
     $('#equals').on('click', equalsCalc);
+    $('#clear').on('click', clearCalc);
+  
+    updateHistory();
+}
+
+function captureBtn(){
+    let numberIn = $(this).text();
+    console.log('number clicked', numberIn);
+    
+    if(calculation.operand === ''){
+        calculation.num1 += numberIn;
+    } 
+    else{
+        calculation.num2 += numberIn;
+    }
+    console.log(calculation);
+    
 }
 
 function operandCal() {
@@ -18,11 +35,10 @@ function operandCal() {
     let operandIn = $(this).text();
 
     calculation.operand = operandIn;
-    calculation.num1 = $('#num1In').val();
+    // calculation.num1 = $('#num1In').val();
+    
     //find a way to get the second input assigned to the object.when enter pushed?
     //where do I send to server? after I have all the properties of the object
-
-    console.log('in operandCalc', calculation);
 }
 
 function clearCalc() {
@@ -30,15 +46,14 @@ function clearCalc() {
     console.log('in clearCalc, cleared');
     $('#num1In').val('');
     $('#num2In').val('');
-    $('.operandButton').val('');
-    calculation.num1 = 0;
-    calculation.num2 = 0;
-    calculation.operand = 0;
+    calculation.num1 = '';
+    calculation.num2 = '';
+    // calculation.operand = 0;
 
 }
 
 function equalsCalc() {
-    calculation.num2 = $('#num2In').val();
+    // calculation.num2 = $('#num2In').val();
     console.log('in equalsCalc', calculation);
     //all properties of object here. 
     //send to server here
@@ -69,7 +84,8 @@ function updateHistory() {
         for (historyData of response) {
             $('#history').append(`<li>${historyData.num1} 
                                       ${historyData.operand} 
-                                      ${historyData.num2}</li>`)
+                                      ${historyData.num2} 
+                                    = ${historyData.result}</li>`)
         }
 
     });
