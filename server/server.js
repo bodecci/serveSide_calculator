@@ -27,13 +27,13 @@ app.post('/calculate', (req, res) => {
     let result = 0;
     //finding out what the calculation is, and performing it
     if (calculation.operand === '+') {
-        result = parseFloat(calculation.num1) + parseFloat(calculation.num2);
+        result = Number(calculation.num1) + Number(calculation.num2);
     } else if (calculation.operand === '-') {
-        result = parseFloat(calculation.num1) - parseFloat(calculation.num2);
+        result = Number(calculation.num1) - Number(calculation.num2);
     } else if (calculation.operand === '*') {
-        result = parseFloat(calculation.num1) * parseFloat(calculation.num2);
+        result = Number(calculation.num1) * Number(calculation.num2);
     } else if (calculation.operand === '/') {
-        result = parseFloat(calculation.num1) / parseFloat(calculation.num2);
+        result = Number(calculation.num1) / Number(calculation.num2);
     }
     calculation.result = result;
     historyOfCalc.push(calculation);

@@ -7,7 +7,7 @@ let calculation = {
 } //end calculation
 
 function readyNow() {
-    $('.btn').on('click', captureBtn);
+    $('.numBtn').on('click', captureBtn);
     $('.operandButton').on('click', operandCal);
     $('#equals').on('click', equalsCalc);
     $('#clear').on('click', clearCalc);
