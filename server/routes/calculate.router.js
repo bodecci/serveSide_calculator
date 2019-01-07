@@ -1,7 +1,7 @@
 const express = require('express');
 
 const router = express.Router();
-
+const historyOfCalc = [];
 router.get('/', (req, res) => {
     console.log('/calculate GET');
     res.send(historyOfCalc);

@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use('/calculate', calculateRouter);
 
-const historyOfCalc = [];
+
 const PORT = process.env.PORT || 5001;
 
 //server running on PORT
