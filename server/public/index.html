@@ -9,12 +9,12 @@
     <script src="scripts/client.js"></script>
     <link rel="stylesheet" href="styles/bootstrap.css">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Weekend Challenge 2</title>
+    <title>Server-side Calculator</title>
 </head>
 
 <body>
     <div id="container">
-        <h1>Weekend Challenge 2</h1>
+        <center><h1><b>Server-Side Calculator</b></h1></center>
         <!-- Setting up the inputs as the wire frame provided. Styling will come later -->
         <div id="inputDiv">
             <!-- <input type="number" placeholder="num1" id="num1In"> -->
@@ -59,7 +59,7 @@
                     <div class="btn-group mr-2 btn-group-lg" role="group" aria-label="Third group">
                         <button type="button" class="btn btn-secondary numBtn">.</button>
                         <button type="button" class="btn btn-secondary numBtn">0</button>
-                        <button type="button" class="btn btn-secondary">C</button>
+                        <button type="button" id="clear" class="btn btn-secondary">C</button>
                     </div>
                     <div class="btn-group btn-group-lg" role="group" aria-label="Third group">
                         <button type="button" class="btn btn-secondary operandButton">/</button>
@@ -78,9 +78,16 @@
             <button id="equals">=</button>
             <button id="clear">C</button> -->
             <pre></pre>
+            <!-- <div id="inputDiv">
+            <h3>INPUT: <h5 id="input"></h5></h3>
+            </div> -->
         </div>
+
+       
+        <br>
+        <br>
         <div id="outputDiv">
-            <h3 id="output">OUTPUT</h3>
+            <h3 id="output"><b>OUTPUT</b></h3>
             <ul id="history">
 
             </ul>

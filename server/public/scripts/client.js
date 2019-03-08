@@ -47,6 +47,7 @@ function clearCalc() {
     // $('#num2In').val('');
     calculation.num1 = '';
     calculation.num2 = '';
+    calculation.operand = '';
     // calculation.operand = 0;
 
 }
@@ -72,8 +73,9 @@ function equalsCalc() {
                              ${calculation.operand}
                              ${calculation.num2} = 
                              ${response.answerOut}`);
+        updateHistory();
         });
-    updateHistory();
+    
 
 }
 
