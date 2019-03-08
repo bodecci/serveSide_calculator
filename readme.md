@@ -31,7 +31,7 @@ The  'C' button  clears the user input fields.
 
 ## APP DEMO
 
-![](public/serverSideCalc.gif)
+![](images/serverSideCalc.gif)
 
 
 
