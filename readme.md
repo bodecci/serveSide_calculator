@@ -28,20 +28,10 @@ The  'C' button  clears the user input fields.
 
 
 
----
-![base mode interface](images/baseMode.png)
----
 
-## Stretch Goals
+## APP DEMO
 
-- Convert the interface to look and behave like a calculator as shown below.
+![](public/serverSideCalc.gif)
 
-  *Interfaces that mirror real world objects are often more intuitive and self-explanatory for users.*
-
----
-![](serverSideCalc.gif)
----
-
-- Only allow the POST call to happen if all necessary input is ready.
 
 
